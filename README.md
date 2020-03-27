@@ -4,12 +4,12 @@
 
 ---
 ## SOMMAIRE
-   - [Structures des fichiers](#Structures des fichiers)
-   - [Définition des structures](#Définition des structures)
-   - [Chargement des fichiers](#Chargement des fichiers)
-   - [Affichage des logements disponibles par cité](#Affichage des logements disponibles par cité)
-   - [Affichage de la liste des logements occupés](#Affichage de la liste des logements occupés)
-   - [Affichage des demandes de logement en attente](#Affichage des demandes de logement en attente)
+   - [Structures des fichiers](#)
+   - [Définition des structures](#)
+   - [Chargement des fichiers](#)
+   - [Affichage des logements disponibles par cité](#)
+   - [Affichage de la liste des logements occupés](#)
+   - [Affichage des demandes de logement en attente](#Affichage)
    - [Traitement des demandes en attentes](#license)
    - [Saisie d'une nouvelle demande](#license)
    - [Annulation d'une demande](#license)
