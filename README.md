@@ -174,5 +174,85 @@ dans le cas où la condition est respectée.
 ---
 ## Affichage des demandes de logement en attente
 
+Cette fonctionnalité permet d’afficher toutes les demandes ainsi que toutes les informations
+liées à celle-ci présentes dans le tableau Demande.
+
+---
+## Traitement des demandes en attentes
+
+Cette fonctionnalité permet de traiter une seule demande avant de retourner dans la fonction
+test. Pour se faire, la fonction appelée va commencer par traiter la première demande en attente.
+Elle va ensuite pour chaque logement vérifier si celui-ci est disponible et si la cité ainsi que le type
+
+de logement sont les mêmes que la demande en traitement.
+Dans le cas, où, toutes ces conditions sont respectées, le logement va être attribué à
+l’étudiant demandeur et sa demande va être supprimé du tableau. Puis les tableaux mis à jour vont
+être retournés dans la fonction test.
+
+Dans le cas contraire, l’utilisateur va avoir le choix de lancer une seconde fonction nous
+proposant quelques conseils. En effet cette fonction va afficher les logements du même type
+souhaité ne se situant pas dans la cité demandée et les logement se situant dans la bonne cité mais
+n’étant pas du même type souhaité.
+
+Si l’utilisateur refuse d’avoir un conseil, la fonction va traiter la prochaine demande en
+attente et recommencer le même processus.
+Sinon, l’utilisateur va avoir le choix entre plusieurs logements respectant les conditions ci-
+dessus.
+
+A ce moment, il doit sélectionner un numéro attribué à un logement pour l’affecter à la
+demande et la supprimer. Mais malgré les différents conseil, l’utilisateur peut encore abandonner le
+traitement de la demande et ainsi commencer à traiter la demande en attente suivante et
+recommencer le processus.
+
+Lors de l’attribution d’un logement à un étudiant demandeur, la fonction supprime toutes les
+demandes comportant le même identifiant étudiant pour éviter que celui-ci soit dans plusieurs
+logements.
+
+Si toutes les demandes sont traitées, un message s’affichera.
+
+---
+## Saisie d'une nouvelle demande
+
+Cette fonctionnalité permet de créer une nouvelle demande et l’insérer dans le tableaux trié.
+Plusieurs vérification de saisie on été mis en place pour cette fonction, il est donc impossible
+d’avoir un identifiant de demande en doublon car celui-ci est unique à une demande. Lors de la
+saisie de l’identifiant étudiant, celui-ci peut déjà exister, l’utilisateur à le choix d’arrêter la fonction ou de continuer la création de demande.
+
+Dans le cas où l’étudiant existe et que l’étudiant réside déjà dans un logement. La fonction
+s’arrête et retourne dans la fonction test. Si il existe mais qu’il ne réside dans aucun logement, les
+informations nécessaire à la création demande vont être envoyées.
+Si l’étudiant n’existe pas, une création va être lancée, l’insérant ensuite dans le tableau
+étudiant trié et compléter la demande avec les informations nécessaires du nouvel étudiant.
+Une fois la création terminée, la demande va être insérée dans le tableau trié par échelon
+d’étudiant avant de retourner le tableau mis à jour dans la fonction test.
+
+---
+## Annulation d'une demande
+
+Cette fonctionnalité permet d’annuler une demande non traitée. Pour se faire la liste des
+demandes va être affichée, l’utilisateur devra seulement saisir l’identifiant de la demande qu’il
+souhaite supprimer. Si l’identifiant n’existe pas, un message d’erreur s’affiche et l’utilisateur doit
+ressaisir un bon identifiant. Si l’identifiant existe, une suppression est faite dans le tableau et la
+fonction retourne le tableau mis à jour.
+Remarque :
+Si la différence entre la taille physique et la taille logique dans le tableau Demande est égale
+à cinq, une réallocation d’espace ( realloc ) va être réalisée pour ainsi éviter qu’il y trop d’espace
+vide.
+
+---
+## Libération de logement
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
