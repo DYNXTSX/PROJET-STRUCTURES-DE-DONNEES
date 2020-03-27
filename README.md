@@ -19,7 +19,8 @@
 ---
 ## Structures des fichiers
 
-### Fichier I : "Etudiant.don"
+### Fichier I : "Etudiant.don"
+
 Ce fichier contient un nombre de ligne indéterminé triées par identifiant. Chaque ligne de
 celui-ci définit un seul étudiant comportant ces informations suivantes :
     - Un identifiant d’étudiant sous la forme « ETUD – XXXXX »
