@@ -5,7 +5,7 @@
 ---
 ## SOMMAIRE
 - [Structures des fichiers](#structure)
-- [bonjour](#features)
+- [bonjour](#bonjour)
 - [Contributing](#contributing)
 - [Team](#team)
 - [FAQ](#faq)
