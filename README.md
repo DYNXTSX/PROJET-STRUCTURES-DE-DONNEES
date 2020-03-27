@@ -9,7 +9,7 @@
    - [Chargement des fichiers](#)
    - [Affichage des logements disponibles par cité](#)
    - [Affichage de la liste des logements occupés](#)
-   - [Affichage des demandes de logement en attente](#Affichage)
+   - [Affichage des demandes de logement en attente](#Affichage-des-demandes-de-logement-en-attente)
    - [Traitement des demandes en attentes](#license)
    - [Saisie d'une nouvelle demande](#license)
    - [Annulation d'une demande](#license)
@@ -172,7 +172,7 @@ de l’étudiant occupant le logement est identique que celui de l’étudiant t
 dans le cas où la condition est respectée.
 
 ---
-## Affichage
+## Affichage des demandes de logement en attente
 
 
 
