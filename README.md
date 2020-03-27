@@ -172,7 +172,7 @@ de l’étudiant occupant le logement est identique que celui de l’étudiant t
 dans le cas où la condition est respectée.
 
 ---
-## Affichage des demandes de logement en attente
+## Affichage
 
 
 
