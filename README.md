@@ -46,7 +46,7 @@ $ bower install
 
 ---
 
-## Features
+## bonjour
 ## Usage (Optional)
 ## Documentation (Optional)
 ## Tests (Optional)
