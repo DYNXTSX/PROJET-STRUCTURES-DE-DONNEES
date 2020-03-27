@@ -4,12 +4,12 @@
 
 ---
 ## SOMMAIRE
-   - [Structures des fichiers](#structure)
-   - [Définition des structures](#bonjour)
-   - [Chargement des fichiers](#contributing)
-   - [Affichage des logements disponibles par cité](#team)
-   - [Affichage de la liste des logements occupés](#faq)
-   - [Affichage des demandes de logement en attente](#support)
+   - [Structures des fichiers](#Structures des fichiers)
+   - [Définition des structures](#Définition des structures)
+   - [Chargement des fichiers](#Chargement des fichiers)
+   - [Affichage des logements disponibles par cité](#Affichage des logements disponibles par cité)
+   - [Affichage de la liste des logements occupés](#Affichage de la liste des logements occupés)
+   - [Affichage des demandes de logement en attente](#Affichage des demandes de logement en attente)
    - [Traitement des demandes en attentes](#license)
    - [Saisie d'une nouvelle demande](#license)
    - [Annulation d'une demande](#license)
@@ -78,15 +78,101 @@ typedef struct
 }Etudiant;
 ```
 
+### Structure II : Logement
 
+Cette structure contient :
+   - Une chaîne de caractères pour l’identifiant logement
+   - Une chaîne de caractères pour le type de logement
+   - Deux entier représentant la disponibilité et l’adaptation pour les handicapés
+   - Une chaîne de caractères pour l’identifiant de l’étudiant
+   - Une chaîne de caractères pour le nom de la cite
 
+```c
+typedef struct
+{
+   char IdLogement[11],TypeLog[2];
+   int Disponible, AdaptHandicap;
+   char IdEtudiant[11],Cite[30];
+}Logement;
+```
 
+### Structure III : Demande
 
+Cette structure contient :
+   - Une chaîne de caractères pour l’identifiant de demande
+   - Une chaîne de caractères pour le type de logement demandé
+   - Deux entier représentant l’échelon de l’étudiant demandeur et son handicape
+   - Une chaîne de caractères pour l’identifiant de l’étudiant demandeur
+   - Une chaîne de caractères pour la cité demandée
 
+```c
+typedef struct
+{
+   char IdDemande[11],TypeLog[2];
+   int EchelonEtudDem, Handicap;
+   char IdEtudiant[11],Cite[30];
+}Demande;
+```
 
+### Structure IV : Cite
 
+Cette Structure contient essentiellement une chaîne de caractères pour un Nom de Cite.
 
+```c
+typedef struct
+{
+   char Nom[30];
+}Cite;
+```
 
+Dès lors, pour stocker les informations de chaque fichier, nous disposons de 4 tableaux ayant
+été déclaré de type Etudiant, Logement, Demande ou Cite. A la différence des autres, l’allocation
+d’espace du tableau de type Cite se fait directement dans la fonction chargement et non dans la
+fonction test comme les autres.
+
+---
+## Chargement des fichiers
+
+Pour cette fonctionnalité, 4 fonctions chargement ont été mises en place et nous pouvons
+retrouver deux types de chargement parmi ces fonctions :
+   - Chargement à allocation dynamique
+Les tableaux, Étudiant, Logement et Demande sont chargés dynamiquement. En
+effet, une allocation ( malloc ) de 5 espaces est réalisée pour ces 3 tableaux dans la fonction test. Au
+moment de rentrer dans une fonction Chargement, ces tableaux possèdent une taille logique de 0 et
+une taille physique de 5.
+Une fois dans une fonction Chargement, si la taille logique est égale à la taille
+physique au moment d’insérer une nouvelle valeur dans le tableau, une réallocation d’espace
+( realloc ) est réalisée copiant le tableau et rajoutant 5 espaces supplémentaires à celui-ci.
+Lorsque le chargement est terminé, le tableau rempli est retourné dans la fonction
+test.
+   - Chargement à allocation d’espace fixe
+Le tableau Cite est le seul tableau où nous connaissons le nombre d’élément qui le
+compose et nous savons même que ce nombre est précisé à la première ligne de celui-ci. Une fois
+dans la fonction chargement celle-ci va lire la première ligne du fichier et faire une allocation (
+malloc ) d’espace égale au nombre lu dans le fichier.
+Ce même nombre va créer une boucle et faire en sorte que la fonction lise le bon
+nombre de ligne et ainsi éviter que la taille logique ne dépasse la taille physique du tableau et créer
+une erreur.
+
+---
+## Affichage des logements disponibles par cité
+
+Cette fonctionnalité permet d’avoir un affichage trié, par cité, des logements disponibles.
+Pour se faire, la fonction appelée va pour chaque cité, parcourir tout les logements présent dans le
+tableau . Et pour chaque logement, vérifier si celui-ci est disponible et si la cité du logement est
+identique à la cité traitée pour ensuite l’afficher dans le cas où les conditions sont respectées.
+
+---
+## Affichage de la liste des logements occupés
+
+Cette fonctionnalité permet d’avoir un affichage des logements occupés en mentionnant le
+Nom de l’étudiant qui l’occupe. Pour se faire, la fonction appelée va pour chaque logement occupé,
+parcourir tout les étudiants présent dans le tableau. Et pour chaque étudiant, vérifier si l’identifiant
+de l’étudiant occupant le logement est identique que celui de l’étudiant traité pour ensuite l’afficher
+dans le cas où la condition est respectée.
+
+---
+## Affichage des demandes de logement en attente
 
 
 
