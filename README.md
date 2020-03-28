@@ -11,8 +11,8 @@
    - [Affichage de la liste des logements occupés](#Affichage-de-la-liste-des-logements-occupés)
    - [Affichage des demandes de logement en attente](#Affichage-des-demandes-de-logement-en-attente)
    - [Traitement des demandes en attentes](#Traitement-des-demandes-en-attentes)
-   - [Saisie d'une nouvelle demande](#Saisie-d'une-nouvelle-demande)
-   - [Annulation d'une demande](#Annulation-d'une-demande)
+   - [Saisie d'une nouvelle demande](#Saisie-d-une-nouvelle-demande)
+   - [Annulation d'une demande](#Annulation-d-une-demande)
    - [Libération de logement](#Libération-de-logement)
    - [Sauvegarde](#Sauvegarde)
    
