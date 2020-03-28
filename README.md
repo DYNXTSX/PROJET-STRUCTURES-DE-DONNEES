@@ -4,17 +4,17 @@
 
 ---
 ## SOMMAIRE
-   - [Structures des fichiers](#)
-   - [Définition des structures](#)
-   - [Chargement des fichiers](#)
-   - [Affichage des logements disponibles par cité](#)
-   - [Affichage de la liste des logements occupés](#)
+   - [Structures des fichiers](#Structures-des-fichiers)
+   - [Définition des structures](#Définition-des-structures)
+   - [Chargement des fichiers](#Chargement-des-fichiers)
+   - [Affichage des logements disponibles par cité](#Affichage-des-logements-disponibles-par-cité)
+   - [Affichage de la liste des logements occupés](#Affichage-de-la-liste-des-logements-occupés)
    - [Affichage des demandes de logement en attente](#Affichage-des-demandes-de-logement-en-attente)
-   - [Traitement des demandes en attentes](#license)
-   - [Saisie d'une nouvelle demande](#license)
-   - [Annulation d'une demande](#license)
-   - [Libération de logement](#license)
-   - [Sauvegarde](#license)
+   - [Traitement des demandes en attentes](#Traitement-des-demandes-en-attentes)
+   - [Saisie d'une nouvelle demande](#Saisie-d'une-nouvelle-demande)
+   - [Annulation d'une demande](#Annulation-d'une-demande)
+   - [Libération de logement](#Libération-de-logement)
+   - [Sauvegarde](#Sauvegarde)
    
 ---
 ## Structures des fichiers
@@ -242,9 +242,23 @@ vide.
 ---
 ## Libération de logement
 
+Cette fonctionnalité permet de libérer un logement occupé. Pour se faire, l’utilisateur devra
+rentrer l’identifiant du logement qu’il souhaite libérer. Si l’identifiant n’existe pas, il devra ressaisir
+un identifiant. Si l’identifiant existe et que le logement est déjà libre, la fonction s’arrête en
+retournant le tableau de logement.
 
+Remarque :
+Si le logement est occupé, la libération va être réalisée et une seconde fonction va être
+lancée dans le but de trouver une demande de logement susceptible de correspondre au logement
+libéré. Si une demande compatible est trouvée, l’utilisateur va avoir le choix d’attribuer ou non le
+logement libéré à l’étudiant en supprimant sa demande. Sinon, la fonction retourne le tableau mis à
+jour avec un logement libre en plus.
 
+---
+## Libération de logement
 
+Cette fonctionnalité, une fois lancée, permet d’enregistrer toutes les modifications réalisées
+durant l’ouverture du programme dans les fichiers vus avant.
 
 
 
